@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menu - Libris</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="menu-layout">
+      <div class="brand-row">
+        <div class="brand-mark">L</div>
+        <div>
+          <div class="brand-title">Libris</div>
+          <div class="brand-sub">leitura conectada</div>
+        </div>
+      </div>
+
+      <ul class="nav-list">
+        <li><a class="active" href="conteudo.html" target="conteudo">🏠 Página inicial</a></li>
+        <li><a href="explorar.html" target="conteudo">🔎 Explorar</a></li>
+        <li><a href="notificacoes.html" target="conteudo">🔔 Notificações</a></li>
+        <li><a href="mensagens.html" target="conteudo">💬 Mensagens</a></li>
+        <li><a href="listas.html" target="conteudo">📚 Listas</a></li>
+        <li><a href="estatisticas.html" target="conteudo">📊 Estatísticas</a></li>
+        <li><a href="perfil.html" target="conteudo">👤 Perfil</a></li>
+        <li><a href="https://www.google.com" target="_blank" rel="noreferrer">🌐 Google</a></li>
+      </ul>
+
+      <div class="profile-box" id="profileBox">
+        <div class="profile-avatar" id="profileAvatar">+</div>
+        <div>
+          <div class="profile-name" id="profileName">Nenhum perfil</div>
+          <div class="profile-user" id="profileUser">Entre para continuar</div>
+        </div>
+      </div>
+
+      <div class="auth-actions">
+        <button type="button" class="mini-btn primary" id="openLoginBtn">Entrar</button>
+        <button type="button" class="mini-btn" id="openSignupBtn">Criar conta</button>
+      </div>
+
+      <button class="cta-btn" type="button" id="writeReviewBtn">+ Escrever revisão</button>
+    </div>
+
+    <div class="auth-modal hidden" id="authModal">
+      <div class="auth-card">
+        <button type="button" class="close-modal" id="closeAuthModal">×</button>
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth="login">Entrar</button>
+          <button type="button" class="auth-tab" data-auth="signup">Criar conta</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="seu@email.com" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="Sua senha" required />
+          </label>
+          <button type="submit" class="submit-btn">Entrar</button>
+        </form>
+
+        <form id="signupForm" class="auth-form profile-form" method="POST">
+          <label>
+            Nome
+            <input type="text" name="name" placeholder="Seu nome" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="seu@email.com" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" placeholder="Crie uma senha" required />
+          </label>
+
+          <div class="field-group">
+            <span class="field-label">Gênero</span>
+            <div class="choice-row">
+              <label><input type="radio" name="genero" value="Masculino" checked /> Masculino</label>
+              <label><input type="radio" name="genero" value="Feminino" /> Feminino</label>
+              <label><input type="radio" name="genero" value="Outro" /> Outro</label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="field-label">Interesses</span>
+            <div class="choice-row checkbox-row">
+              <label><input type="checkbox" name="interesses" value="Romance" checked /> Romance</label>
+              <label><input type="checkbox" name="interesses" value="Ficção" /> Ficção</label>
+              <label><input type="checkbox" name="interesses" value="Biografia" /> Biografia</label>
+            </div>
+          </div>
+
+          <label>
+            Preferência de leitura
+            <select name="categoria">
+              <option value="Todos">Todos</option>
+              <option value="Ficção" selected>Ficção</option>
+              <option value="Romance">Romance</option>
+              <option value="Clássicos">Clássicos</option>
+            </select>
+          </label>
+
+          <label>
+            Bio
+            <textarea name="bio" rows="4" placeholder="Conte um pouco sobre você..."></textarea>
+          </label>
+
+          <div class="form-actions compact-actions">
+            <button type="submit" class="submit-btn">Cadastrar</button>
+            <button type="reset" class="reset-btn">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-modal hidden" id="reviewModal">
+      <div class="auth-card review-card">
+        <button type="button" class="close-modal" data-close="reviewModal">×</button>
+        <div class="review-header">
+          <h3>Nova revisão</h3>
+          <span>Compartilhe sua leitura</span>
+        </div>
+
+        <form id="reviewForm" class="review-form" method="POST">
+          <label>
+            Título da resenha
+            <input type="text" name="title" placeholder="Ex.: Uma leitura que me marcou" required />
+          </label>
+
+          <label>
+            Livro
+            <input type="text" name="book" placeholder="Nome do livro" required />
+          </label>
+
+          <label>
+            Sua avaliação
+            <textarea name="review" rows="5" placeholder="Escreva sua opinião..." required></textarea>
+          </label>
+
+          <div class="form-actions compact-actions">
+            <button type="submit" class="submit-btn">Publicar</button>
+            <button type="reset" class="reset-btn">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

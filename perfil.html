@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libris — Perfil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-shell">
+    <main class="content-panel single-page-panel">
+      <section class="feed-card standalone-panel">
+        <div class="feed-header">
+          <h2>Perfil</h2>
+          <button type="button" class="ghost-btn">Editar</button>
+        </div>
+
+        <div class="profile-page-card">
+          <div class="profile-page-header">
+            <div class="profile-page-avatar" id="profilePageAvatar">L</div>
+            <div>
+              <h3 id="profilePageName">Perfil privado</h3>
+              <p id="profilePageHandle">@visitante</p>
+            </div>
+          </div>
+
+          <div class="profile-page-meta" id="profilePageMeta">
+            <span>Romance</span>
+            <span>Ficção</span>
+            <span>Clássicos</span>
+          </div>
+
+          <p class="profile-bio" id="profilePageBio">Entre para ver seu perfil personalizável, interesses e histórico de leitura.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="auth-modal hidden" id="authModal">
+      <div class="auth-card">
+        <button type="button" class="close-modal" id="closeAuthModal">×</button>
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth="login">Entrar</button>
+          <button type="button" class="auth-tab" data-auth="signup">Criar conta</button>
+        </div>
+        <form id="loginForm" class="auth-form active">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Entrar</button>
+        </form>
+        <form id="signupForm" class="auth-form profile-form">
+          <label>Nome<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-modal hidden" id="reviewModal">
+      <div class="auth-card review-card">
+        <button type="button" class="close-modal" data-close="reviewModal">×</button>
+        <div class="review-header"><h3>Nova revisão</h3><span>Compartilhe sua leitura</span></div>
+        <form id="reviewForm" class="review-form">
+          <label>Título da resenha<input type="text" name="title" required /></label>
+          <label>Livro<input type="text" name="book" required /></label>
+          <label>Sua avaliação<textarea name="review" rows="5" required></textarea></label>
+          <div class="form-actions compact-actions">
+            <button type="submit" class="submit-btn">Publicar</button>
+            <button type="reset" class="reset-btn">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

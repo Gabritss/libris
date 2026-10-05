@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libris — Notificações</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-shell">
+    <main class="content-panel single-page-panel">
+      <section class="feed-card standalone-panel">
+        <div class="feed-header">
+          <h2>Notificações</h2>
+          <button type="button" class="ghost-btn">Marcar tudo como lido</button>
+        </div>
+
+        <div class="notif-list full-list">
+          <div class="notif-item">
+            <div class="notif-avatar">m</div>
+            <div class="notif-text"><strong>maria</strong> curtiu sua resenha sobre A Sociedade Literária <span class="notif-time">2 min</span></div>
+            <div class="notif-dot"></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-avatar">j</div>
+            <div class="notif-text"><strong>joão</strong> comentou na sua lista de leitura favorita <span class="notif-time">15 min</span></div>
+            <div class="notif-dot"></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-avatar">n</div>
+            <div class="notif-text"><strong>nina</strong> indicou um clássico que combina com você <span class="notif-time">1 h</span></div>
+            <div class="notif-dot"></div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-avatar">l</div>
+            <div class="notif-text"><strong>lucas</strong> começou a seguir seus resumos literários <span class="notif-time">3 h</span></div>
+            <div class="notif-dot"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="auth-modal hidden" id="authModal"> 
+      <div class="auth-card">
+        <button type="button" class="close-modal" id="closeAuthModal">×</button>
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth="login">Entrar</button>
+          <button type="button" class="auth-tab" data-auth="signup">Criar conta</button>
+        </div>
+        <form id="loginForm" class="auth-form active">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Entrar</button>
+        </form>
+        <form id="signupForm" class="auth-form profile-form">
+          <label>Nome<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-modal hidden" id="reviewModal">
+      <div class="auth-card review-card">
+        <button type="button" class="close-modal" data-close="reviewModal">×</button>
+        <div class="review-header"><h3>Nova revisão</h3><span>Compartilhe sua leitura</span></div>
+        <form id="reviewForm" class="review-form">
+          <label>Título da resenha<input type="text" name="title" required /></label>
+          <label>Livro<input type="text" name="book" required /></label>
+          <label>Sua avaliação<textarea name="review" rows="5" required></textarea></label>
+          <div class="form-actions compact-actions">
+            <button type="submit" class="submit-btn">Publicar</button>
+            <button type="reset" class="reset-btn">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

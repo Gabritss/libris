@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Libris — Feed</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <main class="feed-panel">
+        <a name="inicio"></a>
+
+        <div class="topbar">
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input id="mainSearchInput" type="text" placeholder="Buscar livros, autores ou gêneros..." aria-label="Buscar livros" />
+          </div>
+          <div class="toolbar">
+            <button type="button">⚙</button>
+            <button type="button">✦</button>
+            <button type="button">☰</button>
+          </div>
+        </div>
+
+        <div class="tab-row" id="explorar">
+          <button type="button" class="active">Página inicial</button>
+          <button type="button">Ficção</button>
+          <button type="button">Romance</button>
+          <button type="button">Clássicos</button>
+          <button type="button">Não-ficção</button>
+          <button type="button" data-tab="to-read">Para ler</button>
+        </div>
+
+        <section class="feed-card">
+          <div class="feed-header">
+            <h2>Seguindo</h2>
+            <button type="button" class="ghost-btn">Ver tudo</button>
+          </div>
+
+          <div class="mini-lists" id="listas">
+            <div class="list-card">
+              <h3>Favoritos</h3>
+              <ul>
+                <li>Clássicos da literatura</li>
+                <li>Romances contemporâneos</li>
+                <li>Ficção em destaque</li>
+              </ul>
+            </div>
+
+            <div class="list-card">
+              <h3>Próximos passos</h3>
+              <ol>
+                <li>Escolher uma leitura</li>
+                <li>Salvar na biblioteca</li>
+                <li>Compartilhar a resenha</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="review-preview-grid">
+            <div class="profile-pill">
+              <div class="mini-avatar a1">A</div>
+              <div><strong>Ana</strong><span>Romance</span></div>
+            </div>
+            <div class="profile-pill">
+              <div class="mini-avatar a2">L</div>
+              <div><strong>Lucas</strong><span>Ficção</span></div>
+            </div>
+            <div class="profile-pill">
+              <div class="mini-avatar a3">M</div>
+              <div><strong>Maria</strong><span>Clássicos</span></div>
+            </div>
+          </div>
+
+          <section class="profile-summary" id="formulario">
+            <div class="profile-summary-header">
+              <h3>Perfil do leitor</h3>
+              <span>Ativo agora</span>
+            </div>
+            <div class="profile-summary-body">
+              <div class="profile-summary-avatar">L</div>
+              <div>
+                <strong>Leitor em destaque</strong>
+                <p>Ficção, romance e clássicos favoritos para o fim de semana.</p>
+              </div>
+            </div>
+            <div class="profile-summary-stats">
+              <span>Romance</span>
+              <span>Ficção</span>
+              <span>Clássicos</span>
+            </div>
+          </section>
+
+          <div id="booksGrid" class="books-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="feed-card to-read-section" id="toReadSection">
+          <div class="feed-header">
+            <h2>35 livros para ler</h2>
+            <button type="button" class="ghost-btn">Minha lista</button>
+          </div>
+          <div id="toReadGrid" class="to-read-grid"></div>
+        </section>
+
+        <section class="reviews-section feed-card">
+          <div class="feed-header">
+            <h2>Resenhas de leitores</h2>
+            <button type="button" class="ghost-btn" id="reviewsHeaderBtn">Ver todas</button>
+          </div>
+          <div id="reviewsList" class="reviews-list"></div>
+        </section>
+
+      </main>
+
+      <aside class="side-panel" id="notificacoes">
+        <div class="notification-box">
+          <div class="notification-header">
+            <h3>Notificações</h3>
+            <div class="notif-tabs"><span>Todas</span><span>Menções</span></div>
+          </div>
+
+          <div class="notif-list" id="mensagens">
+            <div class="notif-item">
+              <div class="notif-avatar">m</div>
+              <div class="notif-text"><strong>maria</strong> curtiu sua resenha sobre A Sociedade Literária <span class="notif-time">2 min</span></div>
+              <div class="notif-dot"></div>
+            </div>
+
+            <div class="notif-item">
+              <div class="notif-avatar">j</div>
+              <div class="notif-text"><strong>joão</strong> comentou na sua lista de leitura favorita <span class="notif-time">15 min</span></div>
+              <div class="notif-dot"></div>
+            </div>
+
+            <div class="notif-item">
+              <div class="notif-avatar">n</div>
+              <div class="notif-text"><strong>nina</strong> indicou um clássico que combina com você <span class="notif-time">1 h</span></div>
+              <div class="notif-dot"></div>
+            </div>
+
+            <div class="notif-item">
+              <div class="notif-avatar">l</div>
+              <div class="notif-text"><strong>lucas</strong> começou a seguir seus resumos literários <span class="notif-time">3 h</span></div>
+              <div class="notif-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trend-box" id="tabela">
+          <div class="trend-header">
+            <h3>Livros mais lidos</h3>
+            <span>Trending</span>
+          </div>
+
+          <table class="trend-table" frame="box" rules="all">
+            <tr>
+              <th>#</th>
+              <th>Livro</th>
+              <th>Leituras</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Dom Casmurro</td>
+              <td>148K</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>O Pequeno Príncipe</td>
+              <td>126K</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>A Biblioteca da Meia-Noite</td>
+              <td>103K</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>P.S. Eu Te Amo</td>
+              <td>94K</td>
+            </tr>
+          </table>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

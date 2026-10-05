@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libris — Estatísticas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-shell">
+    <main class="content-panel single-page-panel">
+      <section class="feed-card standalone-panel">
+        <div class="feed-header">
+          <h2>Estatísticas</h2>
+          <button type="button" class="ghost-btn">Atualizar</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span>Livros lidos</span><strong>48</strong></div>
+          <div class="stat-card"><span>Resenhas</span><strong>19</strong></div>
+          <div class="stat-card"><span>Seguidores</span><strong>1.2K</strong></div>
+          <div class="stat-card"><span>Streak</span><strong>12 dias</strong></div>
+        </div>
+
+        <div class="trend-box inline-table">
+          <div class="trend-header"><h3>Livros mais lidos</h3><span>Trending</span></div>
+          <table class="trend-table">
+            <tr><th>#</th><th>Livro</th><th>Leituras</th></tr>
+            <tr><td>1</td><td>Dom Casmurro</td><td>148K</td></tr>
+            <tr><td>2</td><td>O Pequeno Príncipe</td><td>126K</td></tr>
+            <tr><td>3</td><td>A Biblioteca da Meia-Noite</td><td>103K</td></tr>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div class="auth-modal hidden" id="authModal">
+      <div class="auth-card">
+        <button type="button" class="close-modal" id="closeAuthModal">×</button>
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth="login">Entrar</button>
+          <button type="button" class="auth-tab" data-auth="signup">Criar conta</button>
+        </div>
+        <form id="loginForm" class="auth-form active">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Entrar</button>
+        </form>
+        <form id="signupForm" class="auth-form profile-form">
+          <label>Nome<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-modal hidden" id="reviewModal">
+      <div class="auth-card review-card">
+        <button type="button" class="close-modal" data-close="reviewModal">×</button>
+        <div class="review-header"><h3>Nova revisão</h3><span>Compartilhe sua leitura</span></div>
+        <form id="reviewForm" class="review-form">
+          <label>Título da resenha<input type="text" name="title" required /></label>
+          <label>Livro<input type="text" name="book" required /></label>
+          <label>Sua avaliação<textarea name="review" rows="5" required></textarea></label>
+          <div class="form-actions compact-actions">
+            <button type="submit" class="submit-btn">Publicar</button>
+            <button type="reset" class="reset-btn">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
